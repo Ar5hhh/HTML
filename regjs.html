@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>FORMS</title>
+<link rel="stylesheet" href="ss.css">
+<script>
+function validate(){
+var a=document.forms["myform"]["name"].value;
+if(a==null ||a==""){
+alert("NAME MUST BE FILLED");
+return false;
+}
+var b=document.forms["myform"]["password"].value;
+if(b==null || b==""){
+alert("FILL PASSWORD");
+return false;
+}
+else if(b.length < 5){
+alert("ATLEAST 6 CHAR REQUIRED");
+return false;
+}
+else if(b.length > 9){
+alert("PASSWORD SHOULDNT EXCEED 8 CHAR");
+return false;
+}
+var c=document.forms["myform"]["re-password"].value;
+if(b!=c){
+alert("PASSWORD DOESN'T MATCH");
+}
+}
+</script>
+</head>
+<body>
+
+<div class="regi">
+<h1>REGISTRATION FORM</h1><br><br>
+<form name="myform" onsubmit="return validate()" method=post>
+
+
+<label for="name"><b>NAME:</b></label>
+<input type="text" placeholder="ENTER NAME" name="name"><br><br>
+
+<label for="password"><b>PASSWORD:</b></label>
+<input type="password" placeholder="ENTER PASSWORD" name="password"><br><br>
+
+<label for="re-password"><b>RE-ENTER PASSWORD:</b></label>
+<input type="password" placeholder="CONFIRM PASSWORD" name="re-password"><br><br>
+
+
+<input type="submit" value="Submit">
+</form>
+</div>
+</body>
+</html>
